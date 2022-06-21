@@ -53,7 +53,6 @@ function sunbloxFarm()
     while wait() do
         if not Farm_Sunblox then break end
         if pcall(onfarmCheck) ~= true then
-            print(pcall(onfarmCheck))
             wait(Farm_Sunblox_JobDelay)
             local args = {
                 [1] = "SunbloxDelivery",
