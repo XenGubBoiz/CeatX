@@ -39,7 +39,7 @@ local void = autofarm:addSection('Void') --VOID SECTION
 
 ---------------------
 local shooting_star = autofarm:addSection('Shooting Star')
-shooting_star:addSection('Auto Claim Star', false, function(value)
+shooting_star:addToggle('Auto Claim Star', false, function(value)
     getgenv().Farm_Star = value
 end)
 
