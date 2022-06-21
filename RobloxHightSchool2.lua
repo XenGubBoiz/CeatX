@@ -39,7 +39,8 @@ local void = autofarm:addSection('Void') --VOID SECTION
 
 ---------------------
 local shooting_star = autofarm:addSection('Shooting Star')
-shooting_star:addToggle('Auto Claim Star', false, function(value)
+
+shooting_star:addToggle('Auto Claim', false, function(value)
     getgenv().Farm_Star = value
 end)
 
@@ -80,7 +81,11 @@ end
 function shootingstarFarm()
     while wait() do
         if not Farm_Star then break end
+        wait(1)
         local star = wp:WaitForChild('ShootingStar')
         star.MainShootingStarPart.CFrame = plr.Character.HumanoidRootPart.CFrame
+        if star.MainShootingStarPart.CFrame == plr.Character.HumanoidRootPart.CFrame then
+            keypress(0x45)
+        end
     end
 end
