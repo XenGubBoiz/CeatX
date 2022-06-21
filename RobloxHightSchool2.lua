@@ -16,8 +16,8 @@ sunblox:addToggle('Auto Farm', false, function(value)
     getgenv().Farm_Sunblox = value
     if value then
         getgenv().JobDone = 0
-        sunbloxFarm()
     end
+    sunbloxFarm()
     --window:Notify('SunBlox', 'Auto Farm Check', function(bool)end)
 end)
 sunblox:addDropdown('Easy', {'Easy', 'Medium', 'Hard'}, function(value)
