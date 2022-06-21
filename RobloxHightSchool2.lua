@@ -12,10 +12,12 @@ local fun = window:addPage('Fun')
 local setting = window:addPage('Setting')
 ---SECTIONS
 local sunblox = autofarm:addSection('SunBlox') --SUNBLOX SECTION
+getgenv().JobDone = 0
 sunblox:addToggle('Auto Farm', false, function(value)
     getgenv().Farm_Sunblox = value
+    
     if value then
-        getgenv().JobDone = 0
+        JobDone = 0
     end
     sunbloxFarm()
     --window:Notify('SunBlox', 'Auto Farm Check', function(bool)end)
@@ -38,7 +40,11 @@ local potioner = autofarm:addSection('Potioneer') --POTIONEER SECTION
 local void = autofarm:addSection('Void') --VOID SECTION
 
 ---------------------
-
+local st = setting:addSection('Setting')
+st:addKeybind("Toggle Keybind", Enum.KeyCode.RightControl, function()
+    window:toggle()
+    end, function()
+end)
 --FUNCTION
 function sunbloxFarm()
     JobDone = 0
@@ -71,5 +77,3 @@ function sunbloxFarm()
         end
     end
 end
-
-
